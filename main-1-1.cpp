@@ -16,6 +16,7 @@ for (int i = 0; i < n; i++){
 }
 
 int array_sum();
-
+ int test;
+ 
     return 0;
 }
