@@ -11,7 +11,7 @@ int main() {
   cout << "Enter the desired number: ";
   cin >> number;
 
-  cout << "There are " << count_evens(number) << "even numbers between 1 and "
+  cout << "There are " << count_evens(number) << " even numbers between 1 and "
        << number << ".";
   cout << endl;
 

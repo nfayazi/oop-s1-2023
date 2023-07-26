@@ -4,7 +4,7 @@
 // number we supply (inclusive). Return 0 if the parameter is less than 1.
 
 int count_evens(int number) {
-  int even_count;
+  int even_count = 0;
 
   for (int i = 1; i < number; i++) {
     if (i % 2 == 0) {
