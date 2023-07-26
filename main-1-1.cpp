@@ -4,18 +4,9 @@ using namespace std;
 extern int array_sum(int array[], int n);
 
 int main(){
-int n;
+    int elements[5] = {1,2,3,4,5};
 
-cout << "How big is the array?: " << endl;
-cin >> n;
-
-int array[n];
-
-for (int i = 0; i < n; i++){
-    cout << "What number is in the array?: " << endl;
-    cin >> array[i];
-}
-array_sum(int array[n], int n);
+cout << "The sum is: " << array_sum(elements, 5);
 
     return 0;
 }
