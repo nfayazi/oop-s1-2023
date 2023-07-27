@@ -19,8 +19,7 @@ bool is_ascending(int array[], int n) {
     } else {
       return false;
     }
-
-    return true;
   }
-  
+
+  return true;
 }
