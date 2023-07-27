@@ -18,7 +18,7 @@ if (n < 1){
   }
 
   for (int i = 1; i < n; i++) {
-    if (current_element < array[i]) {
+    if (current_element <= array[i]) {
       current_element = array[i];
     } else {
       return false;
