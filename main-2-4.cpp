@@ -22,6 +22,14 @@ int main() {
   }
 
 is_ascending(array, n);
+string flag;
+if (is_ascending == 1){
+    flag = "True";
+} else {
+    flag = "false";
+}
+
+cout << "The bool for whether or not this array is in ascending order is: "<< flag << endl;
 
   return 0;
 }
