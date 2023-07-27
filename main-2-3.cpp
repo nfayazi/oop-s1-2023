@@ -11,6 +11,7 @@ using namespace std;
 // If the array contained three 2s, one 5 and eleven 9s, the output would be:
 //       2:3;5:1;9:11;
 
+using namespace std;
 extern void two_five_nine(int array[], int n);
 
 int main(){
