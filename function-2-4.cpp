@@ -13,7 +13,7 @@ if (n < 1){
     return false;
 }
 
-  if (current_element > array[0]) {
+  if (current_element > array[1]) {
     return false;
   }
 
