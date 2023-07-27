@@ -9,6 +9,10 @@
 bool is_ascending(int array[], int n) {
   int current_element = array[0];
 
+if (n < 1){
+    return false;
+}
+
   if (current_element > array[0]) {
     return false;
   }
