@@ -28,6 +28,6 @@ for (int i = 0; i < n; i++){
     }
 }
 
-cout << "2:" << counter2 << ";5:" << counter5 << ";9:" << counter9 << endl;
+cout << "2:" << counter2 << ";5:" << counter5 << ";9:" << counter9 << ";" endl;
 
 }
