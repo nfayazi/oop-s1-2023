@@ -22,7 +22,7 @@ int main() {
     cin >> array[i];
   }
 
-cout << median_array(array, n);
+cout <<"The median number of this array is: " << median_array(array, n) << endl;
 
   return 0;
 }
