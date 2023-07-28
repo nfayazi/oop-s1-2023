@@ -9,7 +9,7 @@ using namespace std;
 // and {1,3,5,4,2} are not. The function must return false if the size
 // parameter, n, is less than 1.
 
-bool is_fanarray(int array[], int n);
+extern bool is_fanarray(int array[], int n);
 
 int main() {
   int n;

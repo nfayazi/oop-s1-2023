@@ -8,23 +8,21 @@ using namespace std;
 // The function must return 0 if the size parameter, n, is even or if it is less
 // than 1.
 
-int median_array(int array[], int n) {
-    int median;
-    int temp_array[n];
-    int current_element;
+extern int median_array(int array[], int n);
 
-if (n % 2 == 0){
-    return 0;
-} else if (n < 1){
-    return 0;
-}
+int main() {
+  int n;
+  cout << "How many elements are there? ";
+  cin >> n;
 
-for (int i = 0; i < n; i++){
-    current_element = array[i];
-    if (current_element > array[i]){
-        temp_array[i] = array[i];
-    }
+  int array[n];
 
-    }
-    return median;
+  for (int i = 0; i < n; i++) {
+    cout << "Enter a number: ";
+    cin >> array[i];
+  }
+
+cout << median_array(array, n);
+
+  return 0;
 }
