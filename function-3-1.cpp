@@ -16,18 +16,20 @@ if (n < 1){
     return false;
 }
 
-for (int i = 1; i < (n/2); i++){
+for (int i = 1; i <= (n/2); i++){
     if (current_element > array[i]){
         return false;
-    } else {
+    } else if (current_element <= array[i]){
         current_element = array[i];
     }
 }
 
-for (int i = n; i > (n/2); i--){
-    if (current_element > array[i]){
+
+
+for (int i = n/2; i < n; i++){
+    if (current_element < array[i]){
         return false;
-    } else {
+    } else if (current_element >= array[i]){
         current_element = array[i];
     }
 }
