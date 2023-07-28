@@ -10,7 +10,8 @@ int min_element(int array[], int n) {
   int smallest_number = array[0];
 
   if (n < 1) {
-    cout << endl << "There are no valid elements to check for in this array." << endl;
+    cout << endl
+         << "There are no valid elements to check for in this array." << endl;
     return 0;
   }
 
@@ -20,5 +21,5 @@ int min_element(int array[], int n) {
     }
   }
 
-    return smallest_number;
+  return smallest_number;
 }

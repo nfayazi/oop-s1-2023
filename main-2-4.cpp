@@ -21,8 +21,9 @@ int main() {
     cin >> array[i];
   }
 
-cout << "The bool for whether or not this array is in ascending order is: "<< is_ascending(array, n) << endl;
-cout << "0 indicating false, 1 indicating true" << endl;
+  cout << "The bool for whether or not this array is in ascending order is: "
+       << is_ascending(array, n) << endl;
+  cout << "0 indicating false, 1 indicating true" << endl;
 
   return 0;
 }

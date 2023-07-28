@@ -22,7 +22,8 @@ int main() {
     cin >> array[i];
   }
 
-cout <<"The median number of this array is: " << median_array(array, n) << endl;
+  cout << "The median number of this array is: " << median_array(array, n)
+       << endl;
 
   return 0;
 }

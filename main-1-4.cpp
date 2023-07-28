@@ -28,8 +28,9 @@ int main() {
     cin >> secondarray[i];
   }
 
-cout << "The sum of array 1 and array 2 is: " << sum_two_arrays(array, secondarray, n) << endl;
-cout << endl;
+  cout << "The sum of array 1 and array 2 is: "
+       << sum_two_arrays(array, secondarray, n) << endl;
+  cout << endl;
 
   return 0;
 }

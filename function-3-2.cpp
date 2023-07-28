@@ -9,28 +9,26 @@ using namespace std;
 // than 1.
 
 int median_array(int array[], int n) {
-    int median;
-    int temp_array[n];
-    int current_element;
+  int median;
+  int temp_array[n];
+  int current_element;
 
-if (n % 2 == 0){
+  if (n % 2 == 0) {
     return 0;
-} else if (n < 1){
+  } else if (n < 1) {
     return 0;
-}
+  }
 
-    for (int i = 0; i < n - 1; i++){
-        for (int j = 0; j < n - 1; j++){
-
-        if (array[j] > array[j+1]){
+  for (int i = 0; i < n - 1; i++) {
+    for (int j = 0; j < n - 1; j++) {
+      if (array[j] > array[j + 1]) {
         int temp = array[j];
-        array[j] = array[j+1];
-        array[j+1] = temp;
-        }
-        }
-
-        median = array[n/2];
-
+        array[j] = array[j + 1];
+        array[j + 1] = temp;
+      }
     }
-    return median;
+
+    median = array[n / 2];
+  }
+  return median;
 }

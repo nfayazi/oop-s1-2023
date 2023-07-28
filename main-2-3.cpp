@@ -14,20 +14,19 @@ using namespace std;
 using namespace std;
 extern void two_five_nine(int array[], int n);
 
-int main(){
-    int n;
-    cout << "How many elements are there? ";
-    cin >> n;
+int main() {
+  int n;
+  cout << "How many elements are there? ";
+  cin >> n;
 
-int array[n];
+  int array[n];
 
-for (int i = 0; i < n; i++){
+  for (int i = 0; i < n; i++) {
     cout << "Enter a number: ";
     cin >> array[i];
-}
+  }
 
+  two_five_nine(array, n);
 
-two_five_nine(array, n);
-
-    return 0;
+  return 0;
 }

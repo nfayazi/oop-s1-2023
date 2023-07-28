@@ -7,7 +7,7 @@ using namespace std;
 
 extern double sum_even(double array[], int n);
 
-int main(){
+int main() {
   int n;
   cout << "How many elements are there? ";
   cin >> n;
@@ -19,7 +19,8 @@ int main(){
     cin >> array[i];
   }
 
-  cout << "The sum of the array's even positions is " << sum_even(array, n) << endl;
+  cout << "The sum of the array's even positions is " << sum_even(array, n)
+       << endl;
 
-    return 0;
+  return 0;
 }

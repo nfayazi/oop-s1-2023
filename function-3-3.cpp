@@ -11,28 +11,26 @@ using namespace std;
 // function must return 0 if the size parameter, n, is less than 1.
 
 double weighted_average(int array[], int n) {
-    double weighted_average = 0;
-    double average = 0;
-    double sum = 0;
+  double weighted_average = 0;
+  double average = 0;
+  double sum = 0;
 
-    if (n < 1){
-        return 0;
-    }
+  if (n < 1) {
+    return 0;
+  }
 
-for (int i = 0; i < n; i++){
-        int count = 0;
-    for (int j = 0; j < n; j++){
-        if (array[i] == array[j]){
+  for (int i = 0; i < n; i++) {
+    int count = 0;
+    for (int j = 0; j < n; j++) {
+      if (array[i] == array[j]) {
         count++;
-        }
+      }
     }
     sum = array[i] * count;
     weighted_average += sum;
-}
+  }
 
-weighted_average /= n;
+  weighted_average /= n;
 
-return weighted_average;
-
-
+  return weighted_average;
 }

@@ -23,7 +23,8 @@ int main() {
     cin >> elements[i];
   }
 
-  cout << "The desired number " << number << " appears in the array " << num_count(elements, n, number) << " times." << endl;
+  cout << "The desired number " << number << " appears in the array "
+       << num_count(elements, n, number) << " times." << endl;
   cout << endl;
 
   return 0;

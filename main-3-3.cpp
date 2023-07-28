@@ -12,7 +12,7 @@ using namespace std;
 
 extern double weighted_average(int array[], int n);
 
-int main(){
+int main() {
   int n;
   cout << "How many elements are there? ";
   cin >> n;
@@ -24,7 +24,5 @@ int main(){
     cin >> array[i];
   }
 
-
-cout << weighted_average(array, n) << endl;
-
+  cout << weighted_average(array, n) << endl;
 }

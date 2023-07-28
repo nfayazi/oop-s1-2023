@@ -7,13 +7,13 @@ using namespace std;
 // than 1.
 
 int array_sum(int array[], int n) {
-int sum = 0;
+  int sum = 0;
 
   for (int i = 0; i < n; i++) {
-    if (n <= 0){
-    cout << "There are no numbers in this array." << endl;
-    return 0;
-}
+    if (n <= 0) {
+      cout << "There are no numbers in this array." << endl;
+      return 0;
+    }
     sum = sum + array[i];
   }
 

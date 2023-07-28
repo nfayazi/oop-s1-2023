@@ -8,20 +8,21 @@ using namespace std;
 
 extern int max_element(int array[], int n);
 
-int main(){
-int n;
-cout << "How many elements, n, are in the array? ";
-cin >> n;
+int main() {
+  int n;
+  cout << "How many elements, n, are in the array? ";
+  cin >> n;
 
-int array[n];
+  int array[n];
 
-for (int i = 0; i < n; i++){
+  for (int i = 0; i < n; i++) {
     cout << "Enter a number: ";
     cin >> array[i];
-}
+  }
 
-cout << endl << "The largest number within the array is: " << max_element(array, n) << endl;
+  cout << endl
+       << "The largest number within the array is: " << max_element(array, n)
+       << endl;
 
-
-    return 0;
+  return 0;
 }

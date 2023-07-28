@@ -10,30 +10,27 @@ using namespace std;
 // parameter, n, is less than 1.
 
 bool is_fanarray(int array[], int n) {
-    int current_element = array [0];
+  int current_element = array[0];
 
-if (n < 1){
+  if (n < 1) {
     return false;
-}
+  }
 
-for (int i = 1; i <= (n/2); i++){
-    if (current_element > array[i]){
-        return false;
-    } else if (current_element <= array[i]){
-        current_element = array[i];
+  for (int i = 1; i <= (n / 2); i++) {
+    if (current_element > array[i]) {
+      return false;
+    } else if (current_element <= array[i]) {
+      current_element = array[i];
     }
-}
+  }
 
-
-
-for (int i = n/2; i < n; i++){
-    if (current_element < array[i]){
-        return false;
-    } else if (current_element >= array[i]){
-        current_element = array[i];
+  for (int i = n / 2; i < n; i++) {
+    if (current_element < array[i]) {
+      return false;
+    } else if (current_element >= array[i]) {
+      current_element = array[i];
     }
-}
+  }
 
-return true;
-
+  return true;
 }

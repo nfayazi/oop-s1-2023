@@ -12,22 +12,22 @@ using namespace std;
 //       2:3;5:1;9:11;
 
 void two_five_nine(int array[], int n) {
-int counter2 = 0;
-int counter5 = 0;
-int counter9 = 0;
+  int counter2 = 0;
+  int counter5 = 0;
+  int counter9 = 0;
 
-for (int i = 0; i < n; i++){
-    if (n < 1){
-        break;
-    } else if (array[i] == 2){
-        counter2++;
-    } else if (array[i] == 5){
-        counter5++;
-    } else if (array[i] == 9){
-        counter9++;
+  for (int i = 0; i < n; i++) {
+    if (n < 1) {
+      break;
+    } else if (array[i] == 2) {
+      counter2++;
+    } else if (array[i] == 5) {
+      counter5++;
+    } else if (array[i] == 9) {
+      counter9++;
     }
-}
+  }
 
-cout << "2:" << counter2 << ";5:" << counter5 << ";9:" << counter9 << ";" << endl;
-
+  cout << "2:" << counter2 << ";5:" << counter5 << ";9:" << counter9 << ";"
+       << endl;
 }
