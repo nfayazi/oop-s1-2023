@@ -19,15 +19,19 @@ void two_five_nine(int array[], int n) {
   for (int i = 0; i < n; i++) {
     if (n < 1) {
       break;
-    } else if (array[i] == 2) {
-      counter2++;
-    } else if (array[i] == 5) {
-      counter5++;
-    } else if (array[i] == 9) {
-      counter9++;
+    }
+    switch (array[i]) {
+      case 2:
+        counter2++;
+        break;
+      case 5:
+        counter5++;
+        break;
+      case 9:
+        counter9++;
+        break;
     }
   }
-
   cout << "2:" << counter2 << ";5:" << counter5 << ";9:" << counter9 << ";"
        << endl;
 }
