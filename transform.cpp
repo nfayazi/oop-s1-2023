@@ -30,7 +30,7 @@ cout << digit_counter;
 
     cout << "The number " << og_num << " has a binary digit of ";
 
-for (int i = 0; i <= digit_counter; i++){
+for (int i = digit_counter; i >= 0; i--){
     cout << digit[i];
 }
 
