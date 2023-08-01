@@ -76,17 +76,17 @@ cout<< "The decimal value of binary1 is " << decimal1 << " and the decimal for b
 
 cout<< "The binary of ";
 for (i = digits - 1; i >= 0; i--){
-    cout << binary1[i];
+    cout << reverse_binary1[i];
 }
 cout<< " - ";
 
 for (i = digits - 1; i >= 0; i--){
-    cout << binary2[i];
+    cout << reverse_binary2[i];
 }
 
 cout << " is ";
-for (i = 3; i >= 0; i--){
-    cout << new_binary[i];
+for (i = digits; i >= 0; i--){
+    cout << reverse_new[i];
 }
 
 cout << endl;
