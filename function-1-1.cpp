@@ -11,7 +11,7 @@ int sum_diagonal(int array[4][4]) {
     for (int r = 0; r < sizeof(array, 1); r++){
         for (int c = 0; r < sizeof(array, 2); c++ ){
             if (r == c){
-                sum += array[r,c];
+                sum += array[r][c];
             }
         }
     }
