@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 // 1-2. Given a matrix of integers with 10 rows and 10 columns, write a function
 // and program to determine if the matrix is an identity matrix or not. Return a
 // 1 if it is an identity matrix and a 0 if not. (Definition: An identity matrix
@@ -15,6 +13,7 @@ int is_identity(int array[10][10]) {
             if (r == c){
                 if (array[r][c] != 1){
                     identity = 0;
+                    return identity;
                 } else if (array[r][c] == 1){
                     identity = 1;
                 }
@@ -22,13 +21,13 @@ int is_identity(int array[10][10]) {
             if (r != c){
                 if (array[r][c] != 0){
                     identity = 0;
+                    return identity;
                 } else if (array[r][c] == 0){
                     identity = 1;
                 }
             }
         }
     }
-    
     
      return identity;
      
