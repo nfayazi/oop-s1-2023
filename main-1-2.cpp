@@ -22,8 +22,6 @@ int main(){
         }
     }
 
-    array[4][4] = 0;
-
     cout << "If this is an identity matrix, this program will return 1." << endl << "If not, it will return 0." << endl;
     cout << "The result is: " << is_identity(array) << endl;
 
