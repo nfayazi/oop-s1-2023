@@ -16,6 +16,7 @@ This should produce the following output:
 1 3 16
 */
 void print_summed(int array1[3][3],int array2[3][3]){
+
 int sum = 0;
 const int rows = 3;
 const int cols = 3;
@@ -23,11 +24,10 @@ const int cols = 3;
 for (int r = 0; r < rows; r++){
     for (int c = 0; c < cols; c++){
         sum += array1[r][c] + array2[r][c];
-        cout << sum;
+        cout << sum << " ";
     }
     cout << endl;
 }
-
 
 
 }
