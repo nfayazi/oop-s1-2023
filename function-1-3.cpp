@@ -16,10 +16,11 @@ void count_digits(int array[4][4]){
     int count7 = 0;
     int count8 = 0;
     int count9 = 0;
-    int size = 4;
+    int rows = 4;
+    int cols = 4;
 
-    for (int r = 0; r < size; r++){
-        for (int c = 0; c < size; c++){
+    for (int r = 0; r < rows; r++){
+        for (int c = 0; c < cols; c++){
             switch (array[r][c]) {
             case 0:
             count0++;
