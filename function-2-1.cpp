@@ -31,7 +31,6 @@ decimal = root_decimal;
 int array_decimal[digits];
 
 
-cout << "The binary digits of " << decimal << " is: ";
 for (int i = 0; i < digits; i++){
     array_decimal[i] = decimal % 2;
     decimal /= 2;

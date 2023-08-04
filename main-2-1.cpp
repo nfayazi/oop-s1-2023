@@ -19,7 +19,9 @@ extern void print_binary_str(string decimal_number);
 
 int main(){
     string decimal_number = "12";
+    int decimal = stoi(decimal_number);
 
+cout << "The binary digits of " << decimal << " is: ";
     print_binary_str(decimal_number);
     return 0;
 }
