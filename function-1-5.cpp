@@ -21,8 +21,8 @@ const int rows = 3;
 const int cols = 3;
 
 for (int r = 0; r < rows; r++){
-    int sum = 0;
     for (int c = 0; c < cols; c++){
+        int sum = 0;
         sum += array1[r][c] + array2[r][c];
         cout << sum << " ";
     }
