@@ -11,28 +11,16 @@ as its result.
 */
 
 bool is_palindrome(int integers[], int length){
-  int current_element = integers[0];
 
   if (length < 1) {
     return false;
   }
 
-  for (int i = 1; i <= (length / 2); i++) {
-    if (current_element > integers[i]) {
-      return false;
-    } else if (current_element <= integers[i]) {
-      current_element = integers[i];
-    }
+  for (int i = 0; i <= (length / 2); i++) {
+if (integers[i] != integers[length- 1 - i]){
+    return false;
+}
   }
-
-  for (int i = length / 2; i < length; i++) {
-    if (current_element < integers[i]) {
-      return false;
-    } else if (current_element >= integers[i]) {
-      current_element = integers[i];
-    }
-  }
-
   return true;
 }
 
