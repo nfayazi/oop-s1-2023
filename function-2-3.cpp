@@ -10,26 +10,56 @@ as its result.
 
 */
 
-int sum_if_palindrome(int integers[], int length) {
-
-
-
-}
-
-
-
 bool is_palindrome(int integers[], int length){
+  int current_element = integers[0];
 
+  if (length < 1) {
+    return false;
+  }
 
+  for (int i = 1; i <= (length / 2); i++) {
+    if (current_element > integers[i]) {
+      return false;
+    } else if (current_element <= integers[i]) {
+      current_element = integers[i];
+    }
+  }
 
+  for (int i = length / 2; i < length; i++) {
+    if (current_element < integers[i]) {
+      return false;
+    } else if (current_element >= integers[i]) {
+      current_element = integers[i];
+    }
+  }
+
+  return true;
 }
-
-
-
 
 int sum_array_elements(int integers[], int length){
+int sum = 0;
 
+if (is_palindrome(integers, length) == false){
+    return -2;
+}
+for (int i = 0; i < length; i++){
+    sum += integers[i];
+}
+return sum;
 
 
     
+}
+
+int sum_if_palindrome(int integers[], int length) {
+int sum_if_palindrome = 0;
+
+if (is_palindrome(integers, length) == true){
+    sum_if_palindrome = sum_array_elements(integers, length);
+} else {
+    return -2;
+}
+
+return sum_if_palindrome;
+
 }
