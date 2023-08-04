@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
-#include <cmath>
 
 using namespace std;
+
 /*
 2-1. Given a positive integer decimal number (i. base-10), write a function that
 transforms it into binary (base-2), and prints out the result. You may assume
@@ -15,34 +15,11 @@ need to compile with C++11, include the compilation flag -std=c++11 in your
 compile command.
 */
 
-void print_binary_str(string decimal_number){
-int digits = 0;
-int decimal = stoi(decimal_number);
-int root_decimal = decimal;
+extern void print_binary_str(string decimal_number);
 
+int main(){
+    string decimal_number = "12";
 
-while (decimal > 0){
-    decimal /= 2;
-    digits++;
+    print_binary_str(decimal_number);
+    return 0;
 }
-
-decimal = root_decimal;
-
-int array_decimal[digits];
-
-
-cout << "The binary digits of " << decimal << " is: ";
-for (int i = 0; i < digits; i++){
-    array_decimal[i] = decimal % 2;
-    decimal /= 2;
-}
-
-for (int i = digits - 1; i >=0; i--){
-    cout << array_decimal[i];
-}
-
-cout << endl;
-
-}
-
-
