@@ -106,7 +106,7 @@ double* dynamicArray(int N, double M) {
   for (int i = 0; i < N; i++) {
     array[i] = M;
   }
-
+  
   return array;
 }
 
