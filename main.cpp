@@ -1,6 +1,5 @@
 #include <iostream>
-
-#include "workshop.hpp"
+#include "workshop.h"
 using namespace std;
 
 int main() {
