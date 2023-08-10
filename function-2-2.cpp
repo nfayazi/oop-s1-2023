@@ -16,9 +16,15 @@ contains common math functions like floor and pow).
 
 int bin_to_int(int binary_digits[], int number_of_digits){
 int integer = 0;
+int reversed_bin[number_of_digits];
+
+for (int i = 0; i < number_of_digits; i--){
+    reversed_bin[i] = binary_digits[number_of_digits - 1 - i];
+}
+
 
 for (int i = 0; i < number_of_digits; i++){
-    if (binary_digits[i] == 1){
+    if (reversed_bin[i] == 1){
         integer += pow(2,i);
     }
 }
