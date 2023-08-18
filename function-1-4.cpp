@@ -13,7 +13,6 @@ PersonList shallowCopyPersonList(PersonList pl){
     PersonList shallow_copy;
     
     shallow_copy.numPeople = pl.numPeople;
-    
     shallow_copy.people = pl.people;
     
     return shallow_copy;
