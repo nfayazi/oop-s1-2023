@@ -13,7 +13,6 @@ using namespace std;
 extern PersonList shallowCopyPersonList(PersonList pl);
 
 int main() {
-    // Create an original PersonList
     PersonList og_list;
     og_list.numPeople = 2;
     og_list.people = new Person[og_list.numPeople];
@@ -28,16 +27,16 @@ int main() {
     
     cout << "The original list is: " << endl;
     for (int i = 0; i < og_list.numPeople; i++) {
-        cout << "Person " << i + 1 << ":" << endl;
-        cout << "Name: " << og_list.people[i].name << endl;
-        cout << "Age: " << og_list.people[i].age << endl;
+        cout << "Person " << i + 1;
+        cout << "is: " << og_list.people[i].name;
+        cout << "and " << og_list.people[i].age << " years old." << endl;
     }
     
     cout << "The copied list is: " << endl;
     for (int i = 0; i < copy.numPeople; i++) {
         cout << "Person " << i + 1 << ":" << endl;;
-        cout << "Name: " << copy.people[i].name << endl;
-        cout << "Age: " << copy.people[i].age << endl;
+        cout << "is: " << copy.people[i].name;
+        cout << "and " << copy.people[i].age << " years old." << endl;
     }
     
     return 0;

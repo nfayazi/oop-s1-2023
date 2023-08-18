@@ -22,9 +22,8 @@ int main() {
   Person* person_array = createPersonArray(n);
 
   for (int i = 0; i < n; ++i) {
-    cout << "Person " << i + 1 << ":\n";
-    cout << "Name: " << person_array[i].name << "\n";
-    cout << "Age: " << person_array[i].age << "\n\n";
+    cout << "Person " << i + 1 << ":" << " is: " << person_array[i].name;
+    cout << " and " << person_array[i].age << " years old." << endl;
   }
 
   delete[] person_array;
