@@ -18,7 +18,10 @@ Doe" and 0, respectively.
  */
 
 int main() {
-  int n = 4;
+    int n;
+    cout << "Enter the number of people on this list: ";
+    cin >> n;
+    cout << endl;
   Person* person_array = createPersonArray(n);
 
   for (int i = 0; i < n; ++i) {

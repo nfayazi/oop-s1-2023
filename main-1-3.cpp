@@ -13,16 +13,23 @@ extern PersonList deepCopyPersonList(PersonList pl);
 
 
 int main(){
-    int n = 3;
+    int n;
+    cout << "Enter the number of people on this list: ";
+    cin >> n;
+    cout << endl;
+
 PersonList og_list;
-    og_list.numPeople = 2;
+    og_list.numPeople = n;
     og_list.people = new Person[og_list.numPeople];
     
-    og_list.people[0].name = "Sasuke";
-    og_list.people[0].age = 19;
-    
-    og_list.people[1].name = "Naruto";
-    og_list.people[1].age = 18;
+    for (int i = 0; i < n; i++){
+        cout << "Enter Person" << i + 1 << "'s name: ";
+        cin >> og_list.people[i].name;
+        cout << "Enter their age: ";
+        cin >> og_list.people[i].age;
+        cout << endl;
+    }
+
     
     PersonList copy = deepCopyPersonList(og_list);
     

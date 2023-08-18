@@ -22,7 +22,10 @@ each struct should be set to "Jane Doe" and 1, respectively.
 */
 
 int main() {
-    int n = 4;
+    int n;
+    cout << "Enter the number of people on this list: ";
+    cin >> n;
+    cout << endl;
     
     PersonList list = createPersonList(n);
 

@@ -13,15 +13,22 @@ using namespace std;
 extern PersonList shallowCopyPersonList(PersonList pl);
 
 int main() {
-    PersonList og_list;
-    og_list.numPeople = 2;
+    int n;
+    cout << "Enter the number of people on this list: ";
+    cin >> n;
+    cout << endl;
+
+PersonList og_list;
+    og_list.numPeople = n;
     og_list.people = new Person[og_list.numPeople];
     
-    og_list.people[0].name = "Sasuke";
-    og_list.people[0].age = 9;
-    
-    og_list.people[1].name = "Naruto";
-    og_list.people[1].age = 10;
+    for (int i = 0; i < n; i++){
+        cout << "Enter Person" << i + 1 << "'s name: ";
+        cin >> og_list.people[i].name;
+        cout << "Enter their age: ";
+        cin >> og_list.people[i].age;
+        cout << endl;
+    }
     
     PersonList copy = shallowCopyPersonList(og_list);
     
