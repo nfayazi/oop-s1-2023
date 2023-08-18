@@ -22,7 +22,7 @@ int main() {
   Person* person_array = createPersonArray(n);
 
   for (int i = 0; i < n; ++i) {
-    cout << "Person " << i + 1 << ":" << " is: " << person_array[i].name;
+    cout << "Person " << i + 1 << " is: " << person_array[i].name;
     cout << " and " << person_array[i].age << " years old." << endl;
   }
 
