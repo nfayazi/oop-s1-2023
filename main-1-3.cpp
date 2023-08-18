@@ -28,7 +28,7 @@ PersonList og_list;
     
     cout << "The original list is:" << endl;
     for (int i = 0; i < og_list.numPeople; i++) {
-        cout << "Person " << i + 1 << ":\n";
+        cout << "Person " << i + 1 << ":" << endl;
         cout << "Name: " << og_list.people[i].name << endl;
         cout << "Age: " << og_list.people[i].age << endl;
     }

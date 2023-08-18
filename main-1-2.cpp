@@ -26,11 +26,10 @@ int main() {
     
     PersonList list = createPersonList(n);
 
-    cout << "The list has " << list.numPeople << " people:\n";
+    cout << "The list has " << list.numPeople << " people:" << endl;
     
     for (int i = 0; i < n; ++i) {
-        cout << "Person " << i + 1 << ":" << endl;
-        cout << "Name: " << list.people[i].name << endl;
+        cout << "Person " << i + 1 << ":" << "Name: " << list.people[i].name << endl;
         cout << "Age: " << list.people[i].age << endl;
     }
         delete[] list.people;
