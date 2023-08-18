@@ -28,16 +28,17 @@ int main() {
     cout << "The original list is: " << endl;
     for (int i = 0; i < og_list.numPeople; i++) {
         cout << "Person " << i + 1;
-        cout << "is: " << og_list.people[i].name;
-        cout << "and " << og_list.people[i].age << " years old." << endl;
+        cout << " is: " << og_list.people[i].name;
+        cout << ", " << og_list.people[i].age << " years old." << endl;
     }
-    
+    cout << endl;
     cout << "The copied list is: " << endl;
     for (int i = 0; i < copy.numPeople; i++) {
-        cout << "Person " << i + 1 << ":" << endl;;
-        cout << "is: " << copy.people[i].name;
-        cout << "and " << copy.people[i].age << " years old." << endl;
+        cout << "Person " << i + 1;
+        cout << " is: " << copy.people[i].name;
+        cout << ", " << copy.people[i].age << " years old." << endl;
     }
-    
+    delete[] og_list.people;
+
     return 0;
 }

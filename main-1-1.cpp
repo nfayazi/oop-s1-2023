@@ -23,7 +23,7 @@ int main() {
 
   for (int i = 0; i < n; ++i) {
     cout << "Person " << i + 1 << " is: " << person_array[i].name;
-    cout << " and " << person_array[i].age << " years old." << endl;
+    cout << ", " << person_array[i].age << " years old." << endl;
   }
 
   delete[] person_array;

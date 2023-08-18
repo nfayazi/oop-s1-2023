@@ -22,15 +22,15 @@ each struct should be set to "Jane Doe" and 1, respectively.
 */
 
 int main() {
-    int n = 3;
+    int n = 4;
     
     PersonList list = createPersonList(n);
 
     cout << "The list has " << list.numPeople << " people." << endl;
     
     for (int i = 0; i < n; ++i) {
-        cout << "Person " << i + 1 << ":" << " is: " << list.people[i].name;
-        cout << " and " << list.people[i].age << " years old" << endl;
+        cout << "Person " << i + 1 << " is: " << list.people[i].name;
+        cout << ", " << list.people[i].age << " years old" << endl;
     }
         delete[] list.people;
 
