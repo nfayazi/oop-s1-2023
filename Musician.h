@@ -9,21 +9,12 @@ using namespace std;
 
 class Musician {
     private:
-    string Name;
     string Instrument;
     int yearsExperience;
 
     public:
-void setName(string name) { 
-    Name = name;
-};
-string get_name(){ return Name;}
-void setInstrument(string instrument){
-    Instrument = instrument;
-}
-string get_instrument() { return Instrument;}
-void setYearsExperience(int yearsOfExperience) {
-    yearsExperience = yearsOfExperience;
+void setInstrument(string instrument){}
+void setYearsExperience(int experience) {}
 }
 int get_experience(){ return yearsExperience;};
 Musician() {
@@ -31,11 +22,16 @@ Musician() {
     Instrument = "null";
     yearsExperience = 0;
 }
+*/
 Musician(string name, string instrument, int experience) {
     Name = name;
     Instrument = instrument;
     yearsExperience = experience;
 };
-
-
+/*
+Musician(string instrument, int experience) {
+    Instrument = instrument;
+    yearsExperience = experience;
+};
+*/
 };
