@@ -1,10 +1,10 @@
+#include "MusicBox.h"
+#ifndef MusicBox_h
+#define MusicBox_h
+
 #include <iostream>
 #include <string>
 
-#include "MusicBox.h"
-#ifndef "MusicBox.h"
-#define "MusicBox.h"
-#endif "MusicBox.h"
 
 class StoreShelf {
  private:
@@ -22,3 +22,5 @@ class StoreShelf {
   bool add_music_box(MusicBox a_music_box);
   ~StoreShelf();
 };
+
+#endif
