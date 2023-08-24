@@ -19,5 +19,5 @@ int MusicBox::get_width(){
     return Width;
 };
 MusicBox::~MusicBox(){
-    cout << "Removed song." << endl;
+    
 }
