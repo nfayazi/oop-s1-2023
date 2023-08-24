@@ -1,6 +1,10 @@
 #include <iostream>
 #include <string>
+
 #include "MusicBox.h"
+#ifndef "MusicBox.h"
+#define "MusicBox.h"
+#endif "MusicBox.h"
 
 class StoreShelf {
  private:

@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 #include "StoreShelf.h"
+#endif STORESHELF_H
+#define STORESHELF_H
+
 
 StoreShelf::StoreShelf(){
     WidthShelf = 0;

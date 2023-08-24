@@ -2,14 +2,6 @@
 #include <string>
 #include "StoreShelf.h"
 
-/*  StoreShelf();
-  StoreShelf(int width);
-  int get_width();
-  int get_num_music_boxes();
-  MusicBox *get_contents();
-  bool add_music_box(MusicBox a_music_box);
-  ~StoreShelf(); */
-
 int main(){
     StoreShelf Shelf = StoreShelf(5);
     MusicBox Box1 = MusicBox("Blue", 3);
