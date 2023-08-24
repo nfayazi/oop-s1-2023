@@ -4,9 +4,12 @@
 
 StoreShelf::StoreShelf(){
     WidthShelf = 0;
+    Boxes = new MusicBox[WidthShelf];
 }
 StoreShelf::StoreShelf(int width){
     WidthShelf = width;
+    Boxes = new MusicBox[WidthShelf];
+
 }
 int StoreShelf:: get_width(){
     return WidthShelf;
@@ -18,13 +21,14 @@ MusicBox* StoreShelf::get_contents(){
     return Boxes;
   }
 bool StoreShelf::add_music_box(MusicBox a_music_box){
-    if (MusicWidth < WidthShelf){
-        Boxes[WidthShelf] = a_music_box;
-        MusicWidth++;
+    if (MusicWidth <= WidthShelf){
+        Boxes[MusicWidth] = a_music_box;
+        MusicWidth = MusicWidth + a_music_box.get_width();
         return true;
-    }
-    return false;
+    } else {
+        return false;}
+
   };
-  StoreShelf::~StoreShelf(){
+StoreShelf::~StoreShelf(){
     delete[] Boxes;
-  }
+};
