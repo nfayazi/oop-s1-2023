@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-
 #include "MusicBox.h"
 using namespace std;
 

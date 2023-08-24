@@ -25,6 +25,6 @@ bool StoreShelf::add_music_box(MusicBox a_music_box){
     }
     return false;
   };
-  ~StoreShelf(){
-    
+  StoreShelf::~StoreShelf(){
+    delete[] Boxes;
   }

@@ -15,10 +15,9 @@ int main(){
     MusicBox Box1 = MusicBox("Blue", 3);
     MusicBox Box2 = MusicBox("No", 2);
     MusicBox Box3 = MusicBox("Yo", 5);
-    /*get_contents();
     add_music_box(Box3);
     add_music_box(Box2);
-    add_music_box(Box3); */
+    add_music_box(Box3);
 
     cout << "Shelf width: " << Shelf.get_width();
     cout << "Number of music boxes: " << Shelf.get_num_music_boxes();
