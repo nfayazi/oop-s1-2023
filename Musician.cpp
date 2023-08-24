@@ -1,18 +1,21 @@
 #include "Musician.h"
 using namespace std;
 
-Musician::Musician() : Instrument("null"), yearsExperience(0){
-
+void Musician::setInstrument(string instrument){
+    Instrument = instrument;
+};
+void Musician::setYearsExperience(int yearsOfExperience) {
+    yearsExperience = yearsOfExperience;
 }
+// int get_experience(){ return yearsExperience;};
+Musician() {
+    Instrument = "null";
+    yearsExperience = 0;
+};
 
-Musician::Musician(string instrument, int experience){
+Musician(string instrument, int experience) {
     Instrument = instrument;
     yearsExperience = experience;
 };
-string Musician::get_instrument() {
-    return Instrument;
 
-}
-int Musician::get_experience() {
-    return yearsExperience;
-}
+};
