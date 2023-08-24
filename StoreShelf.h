@@ -1,7 +1,7 @@
 #include "MusicBox.h"
 #ifndef MusicBox_h
 #define MusicBox_h
-
+#endif
 #include <iostream>
 #include <string>
 
@@ -22,5 +22,3 @@ class StoreShelf {
   bool add_music_box(MusicBox a_music_box);
   ~StoreShelf();
 };
-
-#endif
