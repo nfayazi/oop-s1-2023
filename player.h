@@ -1,3 +1,6 @@
+#ifndef player_h
+#define player_h
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -17,3 +20,5 @@ class player {
     int getDamage();
     void setDamage(int damage);
 };
+
+#endif
