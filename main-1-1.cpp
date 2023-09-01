@@ -3,46 +3,50 @@
 #include "Car.h"
 #include "Bus.h"
 #include "Motorbike.h"
+#include <unistd.h>
 
 int main() {
-    int numCars, numBuses, numMotorbikes;
+    int cars, motorbikes, vehicles, bus;
 
-    cout << "How many cars are there? ";
-    cin >> numCars;
+    cout << "How many cars: ";
+    cin >> cars;
 
-    cout << "How many buses are there? ";
-    cin >> numBuses;
+    cout << "How many buses? ";
+    cin >> bus;
 
-    cout << "How many motorbikes are there? ";
-    cin >> numMotorbikes;
+    cout << "How many motorbikes: ";
+    cin >> motorbikes;
 
-    int numVehicles = numCars + numBuses + numMotorbikes;
-    Vehicle* vehicles[numVehicles];
+    vehicles = cars + motorbikes + bus;
+
+    Vehicle **vehicle = new Vehicle*[vehicles];
     int id = 1;
 
-    int carIndex = 0;
-    int busIndex = 0;
-    int motorbikeIndex = 0;
 
-    for (int i = 0; i < numCars; i++) {
-        vehicles[i] = new Car(id++);
-        carIndex++;
+    for (int i = 0; i < cars; i++) {
+        vehicle[i] = new Car(i + 1);
+        sleep(i);
     }
 
-    for (int i = carIndex; i < carIndex + numBuses; i++) {
-        vehicles[i] = new Bus(id++);
-        busIndex++;
+    for (int buses = cars; buses < cars + bus; buses++) {
+        vehicle[buses] = new Bus(buses + 1);
+        sleep(buses);
     }
 
-    for (int i = carIndex + busIndex; i < numVehicles; i++) {
-        vehicles[i] = new Motorbike(id++);
-        motorbikeIndex++;
+    for (int bikes = cars + bus; bikes < vehicles; bikes++) {
+        vehicle[bikes] = new Motorbike(bikes + 1);
+        sleep(bikes);
     }
 
-    for (int i = 0; i < numVehicles; i++) {
-        cout << "Vehicle " << vehicles[i]->getID() << " has been parked for "
-                  << vehicles[i]->getTimeOfEntry() << " seconds." << endl;
+
+    for (int i = 0; i < vehicles; i++){
+        for (int i = 0; i < vehicles; i++){
+            cout << "Vehicle ID: " << vehicle[i]->getID();
+            cout << " - Duration: " << vehicle[i]->getParkingDuration() << " seconds" << endl;
+        }
+
+        delete[] vehicle;
+
+        return 0;
     }
-    delete[] vehicles;
-    return 0;
 }

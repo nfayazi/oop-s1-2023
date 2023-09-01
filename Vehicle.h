@@ -4,6 +4,7 @@
 #include <ctime>
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 
@@ -16,6 +17,7 @@ public:
     Vehicle(int id);
     int getID() const;
     time_t getTimeOfEntry() const;
+    time_t getParkingDuration() const;
 };
 
 #endif 
