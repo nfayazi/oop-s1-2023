@@ -28,7 +28,6 @@ void ParkingLot::unparkVehicle(int id) {
             }
             vehicles[count - 1] = nullptr;
             --count;
-            cout << "Vehicle " << id << " is unparked." << endl;
             return;
         }
     }
