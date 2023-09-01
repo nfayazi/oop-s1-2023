@@ -8,14 +8,14 @@ int main() {
 
     while (parkingLot.getCount() < 5){
         int id;
-        cout << "Enter the ID of the vehicle to park: ";
+        cout << "Which vehicle would you like to park?: ";
         cin >> id;
         Vehicle* vehicle = new Vehicle(id);
         parkingLot.parkVehicle(vehicle);
     }
 
     int unparkID;
-    cout << "Please enter unparked vehicle's ID: ";
+    cout << "Which vehicle would you like to unpark?: ";
     cin >> unparkID;
     parkingLot.unparkVehicle(unparkID);
 
