@@ -17,7 +17,7 @@ int ParkingLot::getCount() const {
 void ParkingLot::parkVehicle(Vehicle* vehicle) {
     if (count < capacity) {
         vehicles[count++] = vehicle;
-        cout << "Number of vehicles parked: " << count++ << endl;
+        cout << "Number of vehicles parked: " << count << endl;
         } else{
         cout << "The lot is full" << endl;
     }
