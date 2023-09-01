@@ -1,8 +1,8 @@
 #include <iostream>
 #include "Vehicle.h"
-#include "car.h"
-#include "bus.h"
-#include "motorbike.h"
+#include "Car.h"
+#include "Bus.h"
+#include "Motorbike.h"
 
 int main() {
     int numCars, numBuses, numMotorbikes;
