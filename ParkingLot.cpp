@@ -2,12 +2,8 @@
 #include <iostream>
 using namespace std;
 
-ParkingLot::ParkingLot(int capacity) {
-capacity = capacity;
-count = 0;
-{
+ParkingLot::ParkingLot(int capacity) : capacity(capacity), count(0) {
     vehicles = new Vehicle*[capacity];
-}
 }
 
 int ParkingLot::getCount() const {
@@ -17,11 +13,11 @@ int ParkingLot::getCount() const {
 void ParkingLot::parkVehicle(Vehicle* vehicle) {
     if (count < capacity) {
         vehicles[count++] = vehicle;
-        cout << "Number of vehicles parked: " << count << endl;
-        } else{
+        cout << "Vehicle with ID " << vehicle->getID() << " parked successfully." << endl;
+    } else {
         cout << "The lot is full" << endl;
     }
-    }
+}
 
 void ParkingLot::unparkVehicle(int id) {
     for (int i = 0; i < count; i++) {
@@ -33,10 +29,16 @@ void ParkingLot::unparkVehicle(int id) {
             }
             vehicles[count - 1] = nullptr;
             --count;
+            cout << "Vehicle " << id << " is unparked." << endl;
             return;
         }
     }
     cout << "Vehicle not in the lot" << endl;
 }
+
 ParkingLot::~ParkingLot() {
+    for (int i = 0; i < count; ++i) {
+        delete vehicles[i];
+    }
+    delete[] vehicles;
 }
