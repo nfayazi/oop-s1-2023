@@ -43,5 +43,6 @@ int main() {
         cout << "Vehicle " << vehicles[i]->getID() << " has been parked for "
                   << vehicles[i]->getTimeOfEntry() << " seconds." << endl;
     }
+    delete[] vehicles;
     return 0;
 }

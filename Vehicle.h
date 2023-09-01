@@ -16,7 +16,6 @@ public:
     Vehicle(int id);
     int getID() const;
     time_t getTimeOfEntry() const;
-    ~Vehicle();
 };
 
 #endif 
