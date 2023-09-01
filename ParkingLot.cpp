@@ -18,9 +18,10 @@ void ParkingLot::parkVehicle(Vehicle* vehicle) {
     if (count < capacity) {
         vehicles[count++] = vehicle;
         cout << "Number of vehicles parked: " << count << endl;
+        } else{
         cout << "The lot is full" << endl;
     }
-}
+    }
 
 void ParkingLot::unparkVehicle(int id) {
     for (int i = 0; i < count; i++) {
@@ -32,11 +33,10 @@ void ParkingLot::unparkVehicle(int id) {
             }
             vehicles[count - 1] = nullptr;
             --count;
-            cout << "Vehicle " << id << " is unparked." << endl;
             return;
         }
     }
-    cout << "Vehicle not in the lot." << endl;
+    cout << "Vehicle not in the lot" << endl;
 }
 ParkingLot::~ParkingLot() {
 }
