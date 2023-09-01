@@ -14,7 +14,7 @@ int main() {
     cin >> numBuses;
 
     cout << "How many motorbikes are there? ";
-    
+
     cin >> numMotorbikes;
 
     int numVehicles = numCars + numBuses + numMotorbikes;

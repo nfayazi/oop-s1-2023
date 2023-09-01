@@ -6,6 +6,7 @@
 #include <string>
 using namespace std;
 
+
 class Vehicle {
 private:
     time_t timeOfEntry;
