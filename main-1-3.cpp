@@ -17,7 +17,10 @@ int main() {
     cin >> unparkID;
     parkingLot.unparkVehicle(unparkID);
 
-    int overstaying = parkingLot.countOverstayingVehicles(3);
+    int overstaying;
+    cout << "How many vehicles are overstaying tonight?";
+    cin >> overstaying;
+    parkingLot.countOverstayingVehicles(overstaying);
     cout << "Number of vehicles overstaying: " << overstaying << endl;
 
     return 0;
