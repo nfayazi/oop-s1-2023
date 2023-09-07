@@ -15,7 +15,7 @@ void Ford:: set_fuel(float f){
     litresOfFuel = f;
 
 }
-float Ford::get_fuel(){
+float Ford::get_litresOfFuel(){
     return litresOfFuel;
 }
 void Ford::set_badgeNumber(int n){
