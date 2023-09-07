@@ -2,7 +2,9 @@
 #include <iostream>
 using namespace std;
 
-Car::Car(){}
+Car::Car(){
+    emissions = 0;
+}
 Car::Car(int Price){
     emissions = 0;
     price = Price;
