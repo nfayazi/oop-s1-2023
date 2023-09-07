@@ -16,7 +16,7 @@ int Car:: get_price(){
     return price;
 }
 void Car:: set_emissions(int Emissions){
-    emissions = emissions;
+    emissions = Emissions;
 }
 int Car:: get_emissions(){
     return emissions;
