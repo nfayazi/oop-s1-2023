@@ -15,4 +15,5 @@ int main(){
     t1.drive(10);
     cout << "After driving, battery percentage at: " << t1.get_batteryPercentage() << endl;
 
+    return 0;
 }
