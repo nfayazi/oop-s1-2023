@@ -33,9 +33,14 @@ float Tesla::get_batteryPercentage(){
     return this->batteryPercentage;
 }
 void Tesla:: chargeBattery(int mins){
-     if (batteryPercentage <= 100 && batteryPercentage >= 0){
-        batteryPercentage = batteryPercentage + (0.5 * mins);
+    int batteryPercentageTemp;
+    int orig;
+    for (int i = 0; i < mins; i++)
+    batteryPercentage = orig;
+     if(batteryPercentage < 100){
+        batteryPercentageTemp = batteryPercentage + (0.5 * mins);
         }
+        batteryPercentage = batteryPercentageTemp;
 }
 void Tesla:: drive(int kms){
     if (batteryPercentage > 0 && batteryPercentage < 100){
