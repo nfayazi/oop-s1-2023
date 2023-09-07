@@ -1,0 +1,41 @@
+#include "Tesla.h"
+#include <iostream>
+using namespace std;
+
+Tesla::Tesla(){}         
+Tesla::Tesla(char m, int p){
+    model = m;
+    price = p;
+}
+void Tesla::set_model(char M){
+    model = M;
+}
+
+char Tesla::get_model(){
+    return model;
+}
+void Tesla::set_batteryPercentage(float B){
+    if (B < 0){
+        this->batteryPercentage = 0;
+    } else if (B > 100){
+        this ->batteryPercentage = 100;
+    }else {
+    this->batteryPercentage = B;
+    }
+}
+
+float Tesla::get_batteryPercentage(){
+    return this->batteryPercentage;
+}
+void Tesla:: chargeBattery(int mins){
+    while (this->batteryPercentage <= 100){
+        batteryPercentage = batteryPercentage + (0.5 * mins);
+    }
+
+}
+
+void Tesla:: drive(int kms){
+    while (batteryPercentage > 0 ){
+    batteryPercentage = batteryPercentage - (0.01 * kms/5);
+    }
+}

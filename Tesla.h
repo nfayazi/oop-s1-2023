@@ -8,9 +8,11 @@ class Tesla : public Car {
 
     public:
     Tesla();            
-    Tesla(char model, int price);
+    Tesla(char m, int p);
+    void set_model(char M);
+    char get_model();
+    void set_batteryPercentage(float B);
+    float get_batteryPercentage();
     void chargeBattery(int mins);            
     void drive(int kms);
-
-
 };
