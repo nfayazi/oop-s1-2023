@@ -2,11 +2,11 @@
 
 class Fleet : public Car {
     private:
-    Car** fleet;
+    Car** fleet[5];
 
     public:
-    Fleet()                          
-    Car **get_fleet();
+    Fleet()   ;                       
+    Car** get_fleet();
     Fleet() ;
 
 }
