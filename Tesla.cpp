@@ -2,11 +2,15 @@
 #include <iostream>
 using namespace std;
 
-Tesla::Tesla(){}         
+Tesla::Tesla(){
+    batteryPercentage = 100;
+    emissions = 0;
+}         
 Tesla::Tesla(char m, int p){
     model = m;
     price = p;
     batteryPercentage = 100;
+    emissions = 0;
 }
 void Tesla::set_model(char M){
     model = M;
