@@ -35,7 +35,7 @@ float Ford:: get_fuel(){
     return litresOfFuel;
 }
 void Ford::drive(int kms){
-    int kms_temp = kms /5;
+    float kms_temp = kms /5;
     for (int i = 0; i < kms_temp; i++){
         litresOfFuel--;
     }
