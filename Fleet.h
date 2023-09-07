@@ -8,4 +8,4 @@ class Fleet : public Car {
     Fleet();                       
     Car** get_fleet();
 
-}
+};
