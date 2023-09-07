@@ -33,12 +33,12 @@ float Tesla::get_batteryPercentage(){
     return this->batteryPercentage;
 }
 void Tesla:: chargeBattery(int mins){
-    while (batteryPercentage <= 100 && batteryPercentage >= 0){
+     if (batteryPercentage <= 100 && batteryPercentage >= 0){
         batteryPercentage = batteryPercentage + (0.5 * mins);
         }
 }
 void Tesla:: drive(int kms){
-    while (batteryPercentage > 0 && batteryPercentage < 100){
+    if (batteryPercentage > 0 && batteryPercentage < 100){
     batteryPercentage = batteryPercentage - (0.01 * kms/5);
     emissions = Car::emissions * 74;
     }
