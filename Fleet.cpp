@@ -16,8 +16,8 @@ Fleet::Fleet()  {
 Car** Fleet::get_fleet(){
     return fleet;
 }
-/*Fleet::~Fleet(){
+Fleet::~Fleet(){
     for (int i = 0; i < 5; i++){
         delete[] fleet[i];
     }
-}; */
+}; 
