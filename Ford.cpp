@@ -27,7 +27,7 @@ int Ford::get_badgeNumber(){
 void Ford::refuel(int litres){
     for (int i = 0; i < litres; i++){
     while (litresOfFuel <= 60){
-        litresOfFuel++
+        litresOfFuel++;
     }
     }
 }
