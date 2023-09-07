@@ -10,6 +10,7 @@ class Ford : public Car {
     Ford();            
     Ford(int badgeNumber, int price);
     void set_fuel(float f);
+    float get_fuel();
     float get_litresOfFuel();
     void set_badgeNumber(int n);
     int get_badgeNumber();
