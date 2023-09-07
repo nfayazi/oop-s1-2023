@@ -2,7 +2,7 @@
 
 class Fleet : public Car {
     private:
-    Car** fleet[5];
+    Car **fleet;
 
     public:
     Fleet();                       
