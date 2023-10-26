@@ -14,8 +14,8 @@ class Persona : public Spot {
     {
         std::tuple<int, int> loc1;
         std::tuple<int, int> loc2;
-        int dx = std::get<0>(loc1) - std::get<0>(loc2);
-        int dy = std::get<1>(loc1) - std::get<1>(loc2);
+        dx = std::get<0>(loc1) - std::get<0>(loc2);
+        dy = std::get<1>(loc1) - std::get<1>(loc2);
             location = std::make_tuple(dx, dy);
             return location;
     }
