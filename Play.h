@@ -17,7 +17,7 @@ class Play {
 
   void set_entities(std::vector<Spot*> mats) { matrix = mats; }
 
-  std::vector<Spot*> initGame(int numPersonas, int numSnares, int matrixWidth,
+  std::vector<Spot*> initPlay(int numPersonas, int numSnares, int matrixWidth,
                               int matrixHeight) {
     for (Spot* matrix : matrix) {
       delete matrix;
