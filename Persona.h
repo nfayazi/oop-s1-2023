@@ -8,6 +8,7 @@ class Persona : public Spot {
 
     public:
     Persona(int x, int y): Spot(x,y, 'P'){}
+    ~Persona(){}
 
     std::tuple<int, int> shift(int dx, int dy)
     {
