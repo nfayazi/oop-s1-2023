@@ -15,6 +15,9 @@ class Persona : public Spot {
     location = std::make_tuple(std::get<0>(location) + dx, std::get<1>(location) + dy);
     return location;
     }
+    // Add a method to update the category for Persona objects.
+    void setPersonaCategory(char Category) {
+        this->setCategory(Category);
 
 };
 
