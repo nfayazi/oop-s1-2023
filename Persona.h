@@ -16,7 +16,6 @@ class Persona : public Spot {
     return location;
     }
 
-
 };
 
 #endif // PERSONA_H
