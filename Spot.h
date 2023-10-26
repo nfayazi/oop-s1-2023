@@ -15,8 +15,8 @@ class Spot {
   virtual ~Spot() {}
   std::tuple<int, int> getLoc() { return location; }
   char getCategory() { return category; }
+  void setCategory(char category) { category = category}
   void setLoc(int x, int y) { this->location = std::make_tuple(x, y); }
-  void setCategory(char Category) { this->category = Category; }
 };
 
 #endif  // SPOT_H
