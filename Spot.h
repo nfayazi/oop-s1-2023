@@ -15,6 +15,7 @@ char category;
         location = std::make_tuple(x,y);
         category = category;
     }
+    virtual ~Spot(){}
     std::tuple<int, int> getLoc();
     char getCategory()
     {
