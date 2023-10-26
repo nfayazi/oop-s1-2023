@@ -18,6 +18,7 @@ class Persona : public Spot {
     // Add a method to update the category for Persona objects.
     void setPersonaCategory(char Category) {
         this->setCategory(Category);
+    }
 
 };
 
