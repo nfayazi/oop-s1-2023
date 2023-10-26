@@ -12,7 +12,7 @@ class Persona : public Spot {
 
     std::tuple<int, int> shift(int dx, int dy)
     {
-    location = make_tuple(get<0>(location) + dx, get<1>(location) + dy);
+    location = std::make_tuple(std::get<0>(location) + dx, std::get<1>(location) + dy);
     return location;
     }
 
