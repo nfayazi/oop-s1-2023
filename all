@@ -1,0 +1,345 @@
+/*
+#include <tuple>
+
+#ifndef GAMEENTITY_H
+#define GAMEENTITY_H
+
+class GameEntity {
+ protected:
+  std::tuple<int, int> position;
+  char type;
+
+ public:
+  GameEntity(int x, int y, char Type) {
+    position = std::make_tuple(x, y);
+    type = Type;
+  }
+  virtual ~GameEntity(){}
+
+  char getType() { return type; }
+
+  std::tuple<int, int> getPos() { return position; }
+
+};
+
+#endif  // GAMEENTITY_H
+
+
+
+
+
+#include <cmath>
+#include <cstdlib>
+#include <time>
+#ifndef UTILS_H
+#define UTILS_H
+
+#include "GameEntity.h"
+
+class Utils {
+ public:
+  static std::tuple<int, int> generateRandomPos(int gridWidth, int gridHeight) {
+    srand(time(0));
+    int x = rand() % gridWidth;
+    int y = rand() % gridHeight;
+    return std::make_tuple(x, y);
+  }
+
+  static double calculateDistance(std::tuple<int, int> pos1,
+                           std::tuple<int, int> pos2) {
+    int dx = std::get<0>(pos1) - std::get<0>(pos2);
+    int dy = std::get<1>(pos1) - std::get<1>(pos2);
+    return std::sqrt(dx * dx + dy * dy);
+  }
+};
+
+
+
+
+
+#endif  // UTILS_H
+
+#ifndef EFFECT_H
+#define EFFECT_H
+class GameEntity;
+
+class Effect {
+    public:
+    virtual void apply(GameEntity& entity) = 0;
+};
+
+#endif // EFFECT_H
+
+
+
+
+
+
+#include <tuple>
+
+#include "Effect.h"
+#include "GameEntity.h"
+
+#ifndef EXPLOSION_H
+#define EXPLOSION_H
+
+class Explosion : public GameEntity, public Effect {
+ protected:
+ public:
+  Explosion(int x, int y) : GameEntity(x, y, 'E') {}
+
+  void apply(GameEntity& entity) override {
+    position = std::make_tuple(-1, -1);
+    type = 'X';
+  }
+};
+
+#endif  // EXPLOSION_H
+
+
+
+
+
+#include "GameEntity.h"
+
+#ifndef MINE_H
+#define MINE_H
+
+class Mine : public GameEntity {
+ protected:
+  // Explosion explosion;
+
+ public:
+  Mine(int x, int y) : GameEntity(x, y, 'M') {}
+
+  Explosion explode() {
+    return Explosion(std::get<0>(position), std::get<1>(position));
+  }
+
+};
+
+#endif  // MINE_H
+
+
+
+
+#include "GameEntity.h"
+
+#ifndef SHIP_H
+#define SHIP_H
+
+class Ship : public GameEntity {
+ protected:
+ public:
+  Ship(int x, int y) : GameEntity(x, y, 'S') {}
+
+  std::tuple<int, int> move(int dx, int dy) {
+    position = std::make_tuple(dx, dy);
+    return position;
+  }
+
+};
+
+#endif  // SHIP_H
+
+
+
+
+
+#include <vector>
+
+#include "Explosion.h"
+#include "GameEntity.h"
+#include "Effect.h"
+#include "Mine.h"
+#include "Ship.h"
+#include "Utils.h"
+
+class Game {
+ private:
+  std::vector<GameEntity*> entities;
+
+ public:
+  Game() {}
+
+  std::vector<GameEntity*> get_entities() { return entities; }
+
+  void set_entities(std::vector<GameEntity*> ents) { entities = ents; }
+
+  std::vector<GameEntity*> initGame(int numShips, int numMines, int gridWidth,
+                                    int gridHeight) {
+    for (GameEntity* entity : entities) {
+      delete entity;
+    }
+    entities.clear();
+
+    for (int i = 0; i < numShips; i++) {
+      std::tuple<int, int> pos =
+          Utils::generateRandomPos(gridWidth, gridHeight);
+      Ship* ship = new Ship(std::get<0>(pos), std::get<1>(pos));
+      entities.push_back(ship);
+    }
+
+    for (int i = 0; i < numMines; i++) {
+      std::tuple<int, int> pos =
+          Utils::generateRandomPos(gridWidth, gridHeight);
+      Mine* mine = new Mine(std::get<0>(pos), std::get<1>(pos));
+      entities.push_back(mine);
+    }
+    return entities;
+  }
+
+  void gameLoop(int maxIterations, double mineDistanceThreshold) {
+    for (int i = 0; i < maxIterations; i++) {
+      for (GameEntity* entity : entities) {
+        if (entity->getType() == 'S') {
+          Ship* ship = dynamic_cast<Ship*>(entity);
+          ship->move(1, 0);
+          for (GameEntity* otherEntity : entities) {
+            if (otherEntity->getType() == 'M') {
+              Mine* mine = dynamic_cast<Mine*>(otherEntity);
+              if (Utils::calculateDistance(ship->getPos(), mine->getPos()) <=
+                  mineDistanceThreshold) {
+                mine->explode();
+                entities.erase(
+                    std::remove(entities.begin(), entities.end(), mine),
+                    entities.end());
+                delete mine;
+              }
+            }
+          }
+        }
+      }
+      bool destroyed = true;
+      for (GameEntity* entity : entities) {
+        if (entity->getType() == 'S') {
+          destroyed = false;
+          break;
+        }
+      }
+      if (destroyed) {
+        break;
+      }
+    }
+  }
+};
+
+#endif // GAME_H
+
+
+
+
+#include "GameEntity.h"
+#include "Utils.h"
+
+#include <ctime>
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    srand(static_cast<unsigned>(time(nullptr)));
+    Utils util;
+
+    int gridWidth = 10;
+    int gridHeight = 10;
+
+    // Generate random positions
+    tuple<int, int> pos1 = util.generateRandomPos(gridWidth, gridHeight);
+    tuple<int, int> pos2 = util.generateRandomPos(gridWidth, gridHeight);
+
+    // Calculate distance between positions
+    double distance = util.calculateDistance(pos1, pos2);
+
+    cout << "Position 1: (" << get<0>(pos1) << ", " << get<1>(pos1) << ")" << endl;
+    cout << "Position 2: (" << get<0>(pos2) << ", " << get<1>(pos2) << ")" << endl;
+    cout << "Distance between positions: " << distance << endl;
+
+    return 0;
+}
+
+
+
+
+
+
+#include "GameEntity.h"
+#include "Utils.h"
+
+#include "Explosion.h"
+#include "Ship.h"
+#include "Mine.h"
+#include <iostream>
+using namespace std;
+
+int main(){
+    Utils utils;
+    Mine mine(3, 4);
+    Ship ship(1, 2);
+    std::tuple<int, int> pos1 = utils.generateRandomPos(10, 10);
+    std::tuple<int, int> pos2 = utils.generateRandomPos(10, 10);
+
+    double distance = utils.calculateDistance(pos1, pos2);
+
+    std::cout << "Random Position 1: (" << std::get<0>(pos1) << ", " << std::get<1>(pos1) << ")\n";
+    std::cout << "Random Position 2: (" << std::get<0>(pos2) << ", " << std::get<1>(pos2) << ")\n";
+    std::cout << "Distance between positions: " << distance << std::endl;
+
+    Explosion explosion = mine.explode();
+
+    std::cout << "Mine type before explosion: " << mine.getType() << std::endl;
+    std::cout << "Explosion type after explosion: " << explosion.getType() << std::endl;
+
+    return 0;
+}
+
+
+
+
+
+
+#include <iostream>
+#include "Game.h" // Include the header file for the Game class
+
+int main() {
+    // Create a Game object
+    Game game;
+
+    // Initialize the game with 2 ships and 3 mines on a 10x10 grid
+    int numShips = 2;
+    int numMines = 3;
+    int gridWidth = 10;
+    int gridHeight = 10;
+    game.initGame(numShips, numMines, gridWidth, gridHeight);
+
+    // Display the initial state of the game entities
+    std::cout << "Initial game entities:" << std::endl;
+    std::vector<GameEntity*> initialEntities = game.get_entities();
+    for (GameEntity* entity : initialEntities) {
+        std::cout << "Entity type: " << entity->getType() << " Position: (" << std::get<0>(entity->getPos()) << ", " << std::get<1>(entity->getPos()) << ")" << std::endl;
+    }
+
+    // Run the game loop for a certain number of iterations
+    int maxIterations = 10;
+    double mineDistanceThreshold = 3.0;
+    game.gameLoop(maxIterations, mineDistanceThreshold);
+
+    // Display the final state of the game entities after the game loop
+    std::cout << "Final game entities:" << std::endl;
+    std::vector<GameEntity*> finalEntities = game.get_entities();
+    for (GameEntity* entity : finalEntities) {
+        std::cout << "Entity type: " << entity->getType() << " Position: (" << std::get<0>(entity->getPos()) << ", " << std::get<1>(entity->getPos()) << ")" << std::endl;
+    }
+
+    // Clean up dynamically allocated entities
+    for (GameEntity* entity : finalEntities) {
+        delete entity;
+    }
+
+    return 0;
+}
+
+
+
+
+*/

@@ -1,30 +1,24 @@
-#ifndef GAMEENTITY_H
-#define GAMEENTITY_H
-#include <iostream>
 #include <tuple>
 
+#ifndef GAMEENTITY_H
+#define GAMEENTITY_H
+
 class GameEntity {
-protected:
-std::tuple<int, int> position;
-char type;
+ protected:
+  std::tuple<int, int> position;
+  char type;
 
+ public:
+  GameEntity(int x, int y, char Type) {
+    position = std::make_tuple(x, y);
+    type = Type;
+  }
+  virtual ~GameEntity(){}
 
-public:
-GameEntity(int x, int y, char type)
-{
+  char getType() { return type; }
 
-}
-
-char getType()
-{
-
-}
-
-virtual void apply(GameEntity& entity)
-{
-    
-}
+  std::tuple<int, int> getPos() { return position; }
 
 };
 
-#endif // GAMEENTITY_H
+#endif  // GAMEENTITY_H
