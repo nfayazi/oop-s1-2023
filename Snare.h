@@ -10,7 +10,7 @@ class Snare : public Spot, public Influence {
 
     public:
     Snare(int x, int y): Spot(x, y, 'S'){}
-    ~Snare();
+    ~Snare(){};
 
     bool isOperative() {return operative;}
     void implement(Spot& spot) override
