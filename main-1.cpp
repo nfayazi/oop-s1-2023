@@ -5,12 +5,15 @@
 #include <tuple>
 #include <iostream>
 using namespace std;
+class Spot;
+
 
 int main(){
     Assists assist;
 
     int matrixWidth = 10;
     int matrixHeight = 10;
+
 
     // Generate random positions
     tuple<int, int> loc1 = assist.createRandomLoc(matrixWidth, matrixHeight);
