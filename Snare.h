@@ -11,8 +11,8 @@ class Snare : public Spot, public Influence {
     public:
     Snare(int x, int y): Spot(x, y, 'S'){}
 
-    bool isOperative() {return operative}
-    void implement()
+    bool isOperative() {return operative;}
+    void implement(Spot& spot) override
     {
         operative = false;
         setCategory('S');
